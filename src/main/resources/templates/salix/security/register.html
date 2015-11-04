@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Salix Regsiter</title>
+    
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"/>
+    
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}" />
+	<link rel="stylesheet" th:href="@{/salix/security.css}" />	
+	
+    <script th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script> 
+	<script th:src="@{/webjars/bootstrap/3.3.5/js/bootstrap.min.js}"></script>
+
+  </head>
+  <body class="container salix-security">  
+
+	<h1>Register</h1>
+	
+	  <form th:action="@{/salix/register}" method="POST" autocomplete="off" class="form-horizontal">
+
+	    <div class="row form-group">
+	  	  <div class="col-sm-3">
+	    	<input type="text" class="form-control" name="username" id="username" placeholder="Email address" />
+      	  </div>
+      	  <div class="col-sm-3">
+	    	<input type="password" class="form-control" name="password" id="password" placeholder="Password" />
+       	  </div>
+      	  <div class="col-sm-3">
+        	<button class="btn btn-primary btn-full" type="submit">Register</button>  
+      	  </div>
+      	</div>
+      	
+      	<div class="row form-group">
+      	  <div class="col-sm-3">
+      	    <input type="text" class="form-control" name="scope" placeholder="Scope" />
+      	  </div>
+      	  <div class="col-sm-3">
+	        <input type="text" class="form-control" name="role" placeholder="Role" />
+      	  </div>
+      	</div>
+
+	</form>
+
+  </body>
+</html>

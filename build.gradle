@@ -1,0 +1,16 @@
+apply plugin: 'war'
+
+dependencies {
+	compile project(':salix-security-core')
+	
+	compile "org.springframework.boot:spring-boot-starter-security:$springBootVersion"
+
+	// Logging
+	compile "commons-logging:commons-logging:1.2"
+}
+
+springBoot {
+	mainClass = 'org.lukosan.salix.Application'
+}
+
+bintray.pkg.version.desc = 'Salix security module'

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Salix / Authentication</title>
+    
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"/>
+    
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}" />
+	<link rel="stylesheet" th:href="@{/salix/security.css}" />	
+	
+    <script th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script> 
+	<script th:src="@{/webjars/bootstrap/3.3.5/js/bootstrap.min.js}"></script>
+
+  </head>
+  <body class="container salix-security">  
+
+	<h1>Authentication</h1>
+	
+	  <div th:if="${null==user}">
+	    <p>You are not logged in. You can <a href="@{/salix/login}">Log in</a> or <a href="@{/salix/login}">Register</a>.</p>
+	  </div>
+	  <form th:unless="${null==user}" th:action="@{/salix/logout}" method="POST">
+	    <p>You are logged in as <strong th:text="${user.username}"></strong>.</p>
+	    
+	    <input class="btn btn-default" type="submit" value="Logout" />
+	  </form>
+
+  </body>
+</html>
