@@ -1,5 +1,3 @@
-apply plugin: 'war'
-
 dependencies {
 	compile project(':salix-security-core')
 	
